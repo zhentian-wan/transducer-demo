@@ -416,14 +416,14 @@ const fn2 = () => {
     const stringToArr = R.compose(
         t.comp(
             t.map(R.trim),
-            t.filter(R.isNil)
+            t.filter(Boolean)
         ),
         R.split(',')
     );
     const transformCnt = R.compose(
         t.comp(
             t.map(stringToArr),
-            t.filter(R.isNil)
+            t.filter(Boolean)
         ),
         R.split('\n')
     );
